@@ -23626,14 +23626,6 @@ BUILDIN_FUNC(getequiprefinecost) {
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	int weapon_lv = sd->inventory_data[i]->wlv;
-	if (sd->inventory_data[i]->type == IT_SHADOWGEAR) {
-		if (sd->inventory_data[i]->equip == EQP_SHADOW_WEAPON)
-			weapon_lv = REFINE_TYPE_WEAPON4;
-		else
-			weapon_lv = REFINE_TYPE_SHADOW;
-	}
-
 	script_pushint(st, status_get_refine_cost((enum refine_type)sd->inventory_data[i]->refine_type, type, (enum refine_info_type)info));
 
 	return SCRIPT_CMD_SUCCESS;
